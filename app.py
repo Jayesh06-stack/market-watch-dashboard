@@ -12,7 +12,7 @@ def main():
   target_coins=['bitcoin','ethereum','tether','solana','binancecoin']
   days=st.sidebar.slider("Days of history:",7,90,30)
 
-  if(st.sidebar.button("Fetch and analyze")):
+  if st.sidebar.button("Fetch and analyze"):
      with(st.spinner("Accessing API and Processing Data:")):
         raw_data=get_historical_data(target_coins,days=days)
 
@@ -20,7 +20,7 @@ def main():
           pivoted,returns,corr=process_market_data(raw_data)
 
           st.subheader("Price v/s Returns Correlation")
-          fig_corr=plot_comparison_heatmaps(pivoted_corr(),corr)
+          fig_corr=plot_comparison_heatmaps(pivoted.corr(),corr)
           st.pyplot(fig_corr)
 
           st.subheader("Volatility Distribution")
