@@ -1,0 +1,22 @@
+# --- API Keys & Secrets ---
+# NEVER upload your secrets or environment files
+.env
+.streamlit/secrets.toml
+
+# --- Python Junk ---
+# These are temporary files Python creates that clog up your repo
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+
+# --- Data & Databases ---
+# Keep your local database out of GitHub to save space/privacy
+data/*.db
+*.csv
+
+# --- System Files ---
+# Junk files created by Windows or Mac
+.DS_Store
+Thumbs.db
