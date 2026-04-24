@@ -1,4 +1,7 @@
 def pivot_market_data(df):
+  if df is None or df.empty:
+    print("Warning: No data provided to pivot")
+    return None
   pivot_df=df.pivot(index='date',columns='coin_id',values='price')
   pivot_df=pivot_df.ffill()
   return pivot_df
