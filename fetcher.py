@@ -1,8 +1,14 @@
 import requests
 import pandas as pd
 import time
+import os
+from dotenv import load_dotenv
 
-API_KEY="CG-uUJUcpH4TYZ2ztdnJgK8zEBr"
+load_dotenv()
+
+API_KEY=os.getenv("CG_API_KEY")
+if not API_KEY:
+    print("Warning: API Key not found! Make sure .env is set up.")
 BASE_URL="https://api.coingecko.com/api/v3"
 
 def check_connection():
