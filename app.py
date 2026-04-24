@@ -13,7 +13,7 @@ def main():
   days=st.sidebar.slider("Days of history:",7,90,30)
 
   if(st.sidebar.button("Fetch and analyze")):
-     with(st.spinner("Accessing API and Processing Data:"):
+     with(st.spinner("Accessing API and Processing Data:")):
         raw_data=get_historical_data(target_coins,days=days)
 
         if raw_data is not None:
